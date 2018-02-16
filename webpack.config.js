@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     app: "./src/index.jsx"
   },
-  devtool: "inline-source-map",
+  devtool: "eval",
   output: {
     path: path.join(__dirname, "www"),
     filename: "bundle.js"
@@ -42,7 +42,7 @@ module.exports = {
           {
             loader: "image-webpack-loader",
             options: {
-              mozjpeg: {
+              jpeg: {
                 progressive: true,
                 quality: 50
               },
@@ -77,7 +77,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["www"]),
     new HtmlWebpackPlugin({
-      title: "Megathon Quiz",
+      title: "Full Stack Project",
       template: "./src/index.ejs"
     }),
     new webpack.DefinePlugin({
@@ -92,7 +92,7 @@ module.exports = {
       algorithm: "gzip",
       test: /\.jsx$|\.css$|\.html$|\.jpg$|\.png$|\.js$/,
       threshold: 10240,
-      minRatio: 0.8
+      minRatio: 0.6
     })
   ]
 };

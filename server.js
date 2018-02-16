@@ -5,7 +5,7 @@ const path = require("path");
 const webpackConfig = require("./webpack.config.js");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const dbConfig = require("./config/database.config.js");
+// const dbConfig = require("./config/database.config.js");
 
 const app = express();
 const router = express.Router();
@@ -61,27 +61,27 @@ if (ENV !== "production") {
   );
 }
 
-mongoose.connect(dbConfig.url);
+// mongoose.connect(dbConfig.url);
 
-const promise = mongoose.connect(dbConfig.url, {
-  useMongoClient: true
-  /* other options */
-});
+// const promise = mongoose.connect(dbConfig.url, {
+//   useMongoClient: true
+//   /* other options */
+// });
 
-mongoose.connection.on("error", function(err) {
-  console.log(err);
-  console.log("Could not connect to the database. Exiting now...");
-});
+// mongoose.connection.on("error", function(err) {
+//   console.log(err);
+//   console.log("Could not connect to the database. Exiting now...");
+// });
 
-mongoose.connection.once("openUri", function() {
-  console.log("Successfully connected to the database");
-});
+// mongoose.connection.once("openUri", function() {
+//   console.log("Successfully connected to the database");
+// });
 
-// Require all routes
-require("./app/questions/questions.routes.js")(app);
-require("./app/answers/answers.routes.js")(app);
-require("./app/correctAnswers/correctAnswers.routes.js")(app);
-require("./app/userData/userData.routes.js")(app);
+// // Require all routes
+// require("./app/questions/questions.routes.js")(app);
+// require("./app/answers/answers.routes.js")(app);
+// require("./app/correctAnswers/correctAnswers.routes.js")(app);
+// require("./app/userData/userData.routes.js")(app);
 
 const server = app.listen(3000, function() {
   const host = server.address().address;

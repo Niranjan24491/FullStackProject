@@ -1,0 +1,44 @@
+.login-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../../images/bg4.jpg");
+  width: auto;
+  height: auto;
+  font-family: "Courgette", cursive;
+  font-style: normal;
+
+  h1 {
+    font-size: 100px;
+    color: dimgrey;
+  }
+
+  h3 {
+    font-size: 50px;
+    color: dimgrey;
+  }
+
+  button:hover {
+    transition: all 200ms ease-in;
+    transform: scale(1.2);
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-color {
+  color: whitesmoke;
+}
+
+.margin-top {
+  margin-top: 15%;
+}
+
+.kep-login-facebook {
+  width: 95px;
+  padding-top: 11px !important;
+  height: 47px;
+  float: right;
+  cursor: pointer;
+  border-radius: 4px !important;
+}
