@@ -31,7 +31,7 @@ export default class Facebook extends Component {
       fjs.parentNode.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
 
-    this.props.onClick(this.fbClick());
+    this.props.onClick(FB.login(this.checkLoginState()));
   }
 
   // Here we run a very simple test of the Graph API after login is
