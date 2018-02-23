@@ -1,0 +1,29 @@
+.landing-page {
+  width: auto;
+  height: auto;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  height: 100%;
+
+  .typed-container {
+    position: absolute;
+    margin: auto;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 38%;
+    height: 100%;
+    border-radius: 3px;
+  }
+  .count {
+    font-size: 250px;
+    background: -webkit-linear-gradient(black, crimson);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .typed {
+    color: darkgrey;
+  }
+}

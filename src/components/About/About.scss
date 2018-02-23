@@ -1,0 +1,50 @@
+.about-page {
+  height: 100%;
+  background-color: rgb(19, 43, 51);
+}
+
+.hexa-poly-container {
+  display: block;
+}
+
+.hexa-poly-container1 {
+  display: block;
+  margin-left: 9%;
+}
+.hexa-poly {
+  position: relative;
+  float: left;
+  margin-right: 1%;
+  width: 125px;
+  background: #1e90ff;
+  height: 125px;
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.hexa-poly1 {
+  float: left;
+  margin-right: 1%;
+  width: 100px;
+  background: black;
+  height: 100px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  opacity: 0.5;
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}

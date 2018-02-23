@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 import "./index.scss";
-import Login from "./containers/Login/Login";
+import Routes from "./routes";
 
-render(<Login />, document.getElementById("App"));
+render(<Routes />, document.getElementById("App"));

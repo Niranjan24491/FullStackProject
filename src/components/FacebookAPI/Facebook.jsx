@@ -30,8 +30,6 @@ export default class Facebook extends Component {
         "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=929134127135304&autoLogAppEvents=1";
       fjs.parentNode.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
-
-    this.props.onClick(FB.login(this.checkLoginState()));
   }
 
   // Here we run a very simple test of the Graph API after login is
@@ -56,8 +54,6 @@ export default class Facebook extends Component {
 
   // This is called with the results from from FB.getLoginStatus().
   statusChangeCallback = response => {
-    console.log("statusChangeCallback");
-    console.log(response);
     if (response.status === "connected") {
       // Logged into your app and Facebook.
       return this.testAPI();
@@ -83,14 +79,23 @@ export default class Facebook extends Component {
   };
 
   fbClick = () => {
-    return (data = FB.login(this.checkLoginState()));
+    return new Promise((resolve, reject) => {
+      FB.login(this.checkLoginState())
+        .then(response => {
+          resolve(response);
+          this.props.onClick(response);
+        })
+        .catch(() => {
+          reject(response);
+        });
+    });
   };
 
   render() {
     return (
       <div className="login-page">
         <a href="#">
-          <div className="facebook-button">
+          <div className="facebook-button" onClick={this.fbClick}>
             <i class="fa fa-facebook" />
           </div>
         </a>
